@@ -1,0 +1,190 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8">
+
+	
+<title>Ryan Gates Portfolio</title>
+	<script>
+		function myFunction() {
+		var x = document.getElementById("myTopnav");
+		if (x.className === "topnav") {
+			x.className += " responsive";
+		} else {
+			x.className = "topnav";
+		}
+}
+	</script>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Alike+Angular&family=Syne:wght@400..800&display=swap');
+ #PersonalLogo {
+        height:70px;
+        background-image:url("Images/Personal_Logo.png");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size:auto;
+    }
+    #nav {
+		display:block;
+		width: 500px;
+		margin:auto;
+		height:50px;
+    }
+	.bgimage {
+		position: absolute;
+		background:url("Images/bgimage.jpg");
+		background-size:cover;
+		height: 100%;
+		width: 100%;
+		background-position: center;
+		background-repeat:repeat-y;
+		left: 0px;
+		top:0px;
+		z-index: -1
+	}
+	h1 {
+		color: white;
+		font-size: 2.4em;
+	}
+	.content {
+		display:flex;
+		color: white;
+		font-size: 1.2em;
+		line-height: 1.5em;
+		padding-right: 15px;
+	}
+	#selfie {
+		display:flex;
+		float:right;
+	}
+	.logodesign {
+		float: right;
+		background-color:rgba(255,255,255,0.35)
+	}
+
+
+
+/*--------------------------Desktop--------------------------*/
+	
+@media (min-width: 1300px){
+    .wrap {
+        width:80%;
+        margin:auto;
+    }
+    }
+	/*--------------------Tablet--------------------*/
+@media (min-width : 940px ) and ( max-width : 1299px ){
+    #nav {
+        width:650px;
+		margin-top: 70px;
+		margin: auto;
+    }
+	#myTopnav{
+		display: flex;
+		align-content: center;
+		justify-content: center;
+	}
+}
+    
+	/*--------menu--------*/
+.topnav {
+  	overflow: hidden;
+	width:500px;
+	margin:auto;
+}
+
+.topnav a {
+	display:block;
+	float: left;
+	color: #f77f00;
+	text-align: center;
+  	padding: 14px 16px;
+  	text-decoration: none;
+  	font-size: 1.2em;;
+	width:210px;
+}
+
+.topnav a:hover {
+  color: #f77f00;
+	font-weight:bolder;
+	font-size: 1.3em;
+	
+}
+
+.topnav a.active {
+	text-decoration: underline;
+}
+
+.topnav .icon {
+  display: none;
+	border: solid;
+	border-width: thin;
+	border-radius: 3px;
+	padding-top: 7px;
+	padding-bottom: 7px;
+	padding-left: 20px;
+	padding-right: 60px;
+	margin-bottom: 15px;
+}
+/*--------mobile--------*/    
+
+@media screen and (max-width : 939px ){
+	.topnav {
+		float: left;
+	}
+  .topnav a:not(:first-child) {display: none;}
+  .topnav a.icon {
+	float: left;
+	margin: auto;
+	margin-left: 25%;
+    display: block;
+  }
+	.topnav.responsive {position: relative;}
+	.topnav.responsive .icon {
+    //position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav.responsive a {
+    display: block;
+  }
+		#slideshow{
+		margin: auto;
+		float:left;
+	}
+}
+</style>
+</head>
+	
+	
+<body>
+
+<div class="wrap">
+	<div class="bgimage"></div>
+	<div id="PersonalLogo"></div>
+	<div id="nav">
+		<div class="topnav" id="myTopnav">
+			<a href="javascript:void(0);" class="icon" onclick="myFunction()">
+				&#9776; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Menu </a>
+			<a href="index.html" class="active">About Me</a>
+			<a href="visuals.html">Visuals</a>
+		</div>
+	</div>
+		<div id="selfie">
+			<img src="Images/selfportrait.png" alt="Picture of Ryan Gates outdoors in a Patagonia jacket.">
+		</div>
+		<div id="header"><h1>A bit about Ryan Gates.</h1></div>
+		<div class="content">
+			<p>Meet Ryan Gates, a visionary multimedia artist whose mastery lies in the realm of visual effects. With an innate ability to seamlessly blend imagination with technical expertise, Ryan crafts immersive experiences that captivate audiences and transport them to extraordinary worlds. Armed with a keen eye for detail and a passion for pushing the boundaries of creativity, he intricately weaves together digital elements to breathe life into his creations. From dazzling CGI landscapes to mind-bending special effects, Ryan's work transcends conventional boundaries, leaving an indelible mark on the landscape of multimedia artistry. As a trailblazer in his field, Ryan Gates continues to redefine the possibilities of visual storytelling, inviting viewers to embark on exhilarating journeys through the power of his imagination.</p></div>
+
+
+	</div>
+
+
+
+	
+
+</body>
+</html>

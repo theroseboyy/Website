@@ -1,0 +1,306 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8">
+
+	
+<title>Ryan Gates Portfolio</title>
+	<script>
+		function myFunction() {
+		var x = document.getElementById("myTopnav");
+		if (x.className === "topnav") {
+			x.className += " responsive";
+		} else {
+			x.className = "topnav";
+		}
+}
+	</script>
+<script type="text/javascript" src="jquery-1.2.6.min.js"></script>
+
+<script type="text/javascript">
+
+/*** 
+    Simple jQuery Slideshow Script
+    Released by Jon Raasch (jonraasch.com) under FreeBSD license: free to use or modify, not responsible for anything, etc.  Please link out to me if you like it :)
+***/
+
+function slideSwitch() {
+    var $active = $('#slideshow IMG.active');
+
+    if ( $active.length == 0 ) $active = $('#slideshow IMG:last');
+
+    // use this to pull the images in the order they appear in the markup
+    var $next =  $active.next().length ? $active.next()
+        : $('#slideshow IMG:first');
+
+    // uncomment the 3 lines below to pull the images in random order
+    
+     var $sibs  = $active.siblings();
+     var rndNum = Math.floor(Math.random() * $sibs.length );
+     var $next  = $( $sibs[ rndNum ] );
+
+
+    $active.addClass('last-active');
+
+    $next.css({opacity: 0.0})
+        .addClass('active')
+        .animate({opacity: 1.0}, 1000, function() {
+            $active.removeClass('active last-active');
+        });
+}
+
+$(function() {
+    setInterval( "slideSwitch()", 3000 );
+});
+
+</script>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Alike+Angular&family=Syne:wght@400..800&display=swap');	
+		#slideshow {
+		position:relative;
+		height:500px;
+		width: 500px;
+		margin-right:0px!important;
+}
+
+	#slideshow IMG {
+		position:absolute;
+		top:0;
+		left:0;
+		z-index:8;
+		opacity:0.0;
+}
+
+	#slideshow IMG.active {
+		z-index:10;
+		opacity:1.0;
+}
+
+	#slideshow IMG.last-active {
+		z-index:9;
+}
+	
+	
+ #PersonalLogo {
+        height:70px;
+        background-image:url("Images/Personal_Logo.png");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size:auto;
+    }
+    #nav {
+		display:block;
+		width: 500px;
+		margin:auto;
+		height:50px;
+    }
+	.bgimage {
+		position: absolute;
+		background:url("Images/bgimage.jpg");
+		background-size:cover;
+		height: 200%;
+		width: 100%;
+		background-position: center;
+		background-repeat:repeat-y;
+		left: 0px;
+		top:0px;
+		z-index: -1
+	}
+	h1 {
+		color: white;
+		font-size: 2.4em;
+	}
+		.footer{
+		display: flex;
+		height: 100px;
+   		margin-right: 350px;
+		transform: translate(50%)	
+	}
+	.content {
+		color: white;
+		font-size: 1.2em;
+		line-height: 1.5em;
+		padding-right: 10px;
+	}
+	.videoDescription{
+		color: white;
+		font-size: 1.2em;
+		line-height: 1.5em;
+	}
+	#selfie {
+		display:flex;
+		float:right;
+	}
+	.logodesign {
+		float: right;
+		background-color:rgba(255,255,255,0.35)
+	}
+	.videos {
+		min-width: 300px;
+	}
+	.videoDescription{
+		min-width: 300px;
+	}
+	#gallerydesc {
+		float: left;
+		margin-right: 500px;
+		min-width: 300px;
+	}
+/*--------------------------Desktop--------------------------*/
+	
+@media (min-width: 1300px){
+    .wrap {
+        width:80%;
+        margin:auto;
+    }
+    }
+	/*--------------------Tablet--------------------*/
+@media (min-width : 940px ) and ( max-width : 1299px ){
+    #nav {
+        width:650px;
+		margin-top: 70px;
+		margin: auto;
+    }
+	#myTopnav{
+		display: flex;
+		align-content: center;
+		justify-content: center;
+	}
+}
+    
+	/*--------menu--------*/
+.topnav {
+  	overflow: hidden;
+	width:500px;
+	margin:auto;
+}
+
+.topnav a {
+	display:block;
+	float: left;
+	color: #f77f00;
+	text-align: center;
+  	padding: 14px 16px;
+  	text-decoration: none;
+  	font-size: 1.2em;;
+	width:210px;
+}
+
+.topnav a:hover {
+  color: #f77f00;
+	font-weight:bolder;
+	font-size: 1.3em;
+	
+}
+
+.topnav a.active {
+	text-decoration: underline;
+}
+
+.topnav .icon {
+  display: none;
+	border: solid;
+	border-width: thin;
+	border-radius: 3px;
+	padding-top: 7px;
+	padding-bottom: 7px;
+	padding-left: 20px;
+	padding-right: 60px;
+	margin-bottom: 15px;
+}
+/*--------mobile--------*/    
+
+@media screen and (max-width : 939px ){
+	.topnav {
+		float: left;
+	}
+  .topnav a:not(:first-child) {display: none;}
+  .topnav a.icon {
+	float: left;
+	margin: auto;
+	margin-left: 25%;
+    display: block;
+  }
+	.topnav.responsive {position: relative;}
+	.topnav.responsive .icon {
+    //position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav.responsive a {
+    display: block;
+  }
+		#slideshow{
+		margin: auto;
+		float:left;
+	}
+}
+	.content{
+		width: 100%;
+		margin: 0px;
+		padding: 0px;
+		float: left;
+		display: flex;
+	}
+	#slideshow{
+		margin: auto;
+	}
+</style>
+</head>
+	
+	
+<body>
+
+<div class="wrap">
+	<div class="bgimage"></div>
+	<div id="PersonalLogo"></div>
+	<div id="nav">
+		<div class="topnav" id="myTopnav">
+			<a href="javascript:void(0);" class="icon" onclick="myFunction()">
+				&#9776; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Menu </a>
+			<a href="index.html">About Me</a>
+			<a href="visuals.html" class="active">Visuals</a>
+		</div>
+	</div>
+
+		<div id="header"><h1>A gallery of stunning design.</h1></div>
+		<div class="content">
+			<div id="gallerydesc">
+				<p1>Throughout my time here at Humber, I have done many different things. From web design, graphic design, photography and more. Today I wanted to showcase some of the photos I have taken during my time here at Humber that I am particularly proud of. With little to no previous knowledge of how to take a good portrait, I was able to learn several stunning techniques that I believe have elevated my photography. The following slideshow is of a few photos that stand out to me above the rest when I look at my photography.</p1>
+			</div>
+		</div>
+				<div id="slideshow">
+   				<img src="Images/Portrait1.jpg" alt="Slideshow Image 1" class="active" />
+				<img src="Images/Portrait2.jpg" alt="Slideshow Image 2" />
+				<img src="Images/Portrait3.jpg" alt="Slideshow Image 3" />
+				<img src="Images/Portrait4.jpg" alt="Slideshow Image 4" />
+			</div>
+
+	<div class="videos">
+		<div class="videoDescription">
+			<h2>3D Renders and Animation</h2>
+			<p1>Below are some examples of current and past 3D renders and/or animations I have done. Next year I will be transitioning from a Media Communications student into a Visual Effects student at the TTTC based out of Vancouver. As a result, I have been spending more time attempting to learn 3D modelling and effects in Houdini. I have attempted to showcase a variety of effects and skills within from Smoke simulations to rigid body dynamics, as well as a short animated clip from Adobe Flash that I made for fun!</p1>
+		</div>
+		<iframe width="49%" height="400" src="https://www.youtube.com/embed/wfxJQg7pCts?si=D1H-UYt35GTraLSw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+		<iframe width="49%" height="400" src="https://www.youtube.com/embed/3mDja3-B09A?si=2ElmYP97AF0sr6ZB" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+		<iframe width="49%" height="400" src="https://www.youtube.com/embed/xvCz0VsZoFg?si=sHEXNfBDRXOL8KGb" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+		<iframe width="49%" height="400" src="https://www.youtube.com/embed/pLSheIoofi0?si=r6igF-luvP28aNA-" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+		</div>
+			<div class="footer">
+		<div class="socials">
+			<a href="https://www.instagram.com" target="_blank"><img src="Images/insta.png" alt="Instagram Logo"></a>
+			<a href="https://www.tiktok.com" target="_blank"><img src="Images/tiktok.png" alt="TikTok Logo"></a>
+			<a href="https://www.twitter.com" target="_blank"><img src="Images/twitter.png" alt="Twitter Logo"></a>
+		</div>
+</div>
+</div>
+
+
+
+
+	
+
+</body>
+</html>
